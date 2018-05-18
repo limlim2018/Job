@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpreadsheetV2CommandTests.Command
+namespace SpreadsheetV2.Tests
 {
     [TestClass()]
     public class SumCommandTest

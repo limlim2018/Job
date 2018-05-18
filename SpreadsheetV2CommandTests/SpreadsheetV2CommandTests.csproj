@@ -57,6 +57,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Command\CreateCommandTest.cs" />
+    <Compile Include="Command\QuitCommandTest.cs" />
+    <Compile Include="Command\SetNumCommandTest.cs" />
     <Compile Include="Command\SumCommandTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
