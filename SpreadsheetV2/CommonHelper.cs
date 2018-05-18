@@ -70,6 +70,15 @@ namespace SpreadsheetV2
         /// <param name="y">y coordinates</param>
         public static int GetNumberValue(int x, int y,string[,] printArr)
         {
+            int xPos = (x - 1) * CommonHelper.NUM_LENGTH;
+
+            if (!CommonHelper.CheckIndex(xPos + 1, y, printArr) ||
+                !CommonHelper.CheckIndex(xPos + 2, y, printArr) ||
+                !CommonHelper.CheckIndex(xPos + 3, y, printArr))
+            {
+                throw new Exception("Please enter a valid subscript.");
+            }
+
             string value = printArr[(x - 1) * NUM_LENGTH + 1, y] +
                             printArr[(x - 1) * NUM_LENGTH + 2, y] +
                             printArr[(x - 1) * NUM_LENGTH + 3, y];

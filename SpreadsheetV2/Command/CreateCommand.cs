@@ -76,12 +76,17 @@ namespace SpreadsheetV2
         public bool AnalysisCmd(string input)
         {
             var match = _reg.Match(input);
-            if (!match.Success && (input.Split(' ').Length != 3))
+            if (!match.Success || (input.Split(' ').Length != 3))
             {
                 return false;
             }
             width = CommonHelper.TryParseInt(match.Groups[1].Value);
             height = CommonHelper.TryParseInt(match.Groups[2].Value);
+
+            if ((width < 1) || (height < 3))
+            {
+                return false;
+            }
 
             return true;
         }

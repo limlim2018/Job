@@ -42,7 +42,7 @@ namespace SpreadsheetV2
         public bool AnalysisCmd(string input)
         {
             var match = _reg.Match(input);
-            if (!match.Success && (input.Split(' ').Length != 4))
+            if (!match.Success || (input.Split(' ').Length != 4))
             {
                 return false;
             }

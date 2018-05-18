@@ -37,6 +37,11 @@ namespace SpreadsheetV2
 
         public bool ExecuteCmd()
         {
+            if(this._sheet._printArr==null)
+            {
+                throw new Exception("Please Creaet Table First!");
+            }
+
             int iValue1 = CommonHelper.GetNumberValue(x1, y1,this._sheet._printArr);
             int iValue2 = CommonHelper.GetNumberValue(x2, y2, this._sheet._printArr);
             int sum = iValue1 + iValue2;
@@ -54,7 +59,7 @@ namespace SpreadsheetV2
         public bool AnalysisCmd(string input)
         {
             var match = _reg.Match(input);
-            if (!match.Success && (input.Split(' ').Length != 7))
+            if (!match.Success || (input.Split(' ').Length != 7))
             {
                 return false;
             }
