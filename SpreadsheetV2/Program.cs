@@ -42,6 +42,7 @@ namespace SpreadsheetV2
                         {
                             break;
                         }
+                        cmd = null;
                     }
                     if(cmd==null)
                     {
